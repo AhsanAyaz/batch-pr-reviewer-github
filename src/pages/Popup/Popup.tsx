@@ -35,7 +35,7 @@ const Popup = () => {
       return [];
     }
 
-    const prefixRegex = /https:\/\/github\.com\/ahsanayaz\//;
+    const prefixRegex = /https:\/\/github\.com\/[^/]+/;
     const suffixRegex = /-[\w\d]*\/pull\/\d\/?\w*\/?$/;
 
     const uniqueTabs = tabs.reduce((accumulator: string[], tab) => {
