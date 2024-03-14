@@ -12,9 +12,9 @@ const Popup = () => {
   const [repo, setRepo] = useState(getRepoNameFromStorage());
 
   const getTabs = useCallback(async () => {
-    const tabs = await chrome.tabs.query({
+    const tabs = (await chrome.tabs.query({
       url: ['https://github.com/*/pull/*/files'],
-    }) as AppTab[];
+    })) as AppTab[];
     const uniqueUrls = new Set<string>();
     const filteredTabs = tabs
       .filter((tab: AppTab) => {
@@ -26,19 +26,22 @@ const Popup = () => {
           return true;
         }
         return tab.url!.toLowerCase().includes(repo.toLowerCase());
-      }).map(tabItem => ({
+      })
+      .map((tabItem) => ({
         ...tabItem,
-        isSelected: true
+        isSelected: true,
       }));
     if (!tabs.length) {
       return [];
     }
 
-    const prefixRegex = /https:\/\/github\.com\/saltsthlm\//;
+    const prefixRegex = /https:\/\/github\.com\/ahsanayaz\//;
     const suffixRegex = /-[\w\d]*\/pull\/\d\/?\w*\/?$/;
 
     const uniqueTabs = tabs.reduce((accumulator: string[], tab) => {
-      const replacedUrl = tab.url?.replace(prefixRegex, '').replace(suffixRegex, '')!;
+      const replacedUrl = tab.url
+        ?.replace(prefixRegex, '')
+        .replace(suffixRegex, '')!;
       if (!accumulator.includes(replacedUrl)) {
         accumulator.push(replacedUrl);
       }
@@ -50,29 +53,31 @@ const Popup = () => {
   }, [repo]);
 
   const sendActionToTabs = (action: any) => {
-    tabs.filter(tabItem => (tabItem.isSelected)).forEach(tabItem => {
-      const tabId = tabItem.id as number;
-      chrome.tabs.sendMessage(tabId, { action });
-    })
+    tabs
+      .filter((tabItem) => tabItem.isSelected)
+      .forEach((tabItem) => {
+        const tabId = tabItem.id as number;
+        chrome.tabs.sendMessage(tabId, { action });
+      });
   };
 
   const selectAll = () => {
     setTabs(
-      tabs.map(tabItem => ({
+      tabs.map((tabItem) => ({
         ...tabItem,
-        isSelected: true
+        isSelected: true,
       }))
-    )
-  }
+    );
+  };
 
   const selectNone = () => {
     setTabs(
-      tabs.map(tabItem => ({
+      tabs.map((tabItem) => ({
         ...tabItem,
-        isSelected: false
+        isSelected: false,
       }))
-    )
-  }
+    );
+  };
 
   const onTabSelectionChange = (tab: AppTab, isSelected: boolean) => {
     setTabs(
@@ -80,17 +85,17 @@ const Popup = () => {
         if (tabItem.id === tab.id) {
           return {
             ...tab,
-            isSelected
-          }
+            isSelected,
+          };
         }
         return tabItem;
       })
-    )
-  }
+    );
+  };
 
   const getSelectedTabsLength = () => {
-    return tabs.filter(tabItem => tabItem.isSelected).length
-  }
+    return tabs.filter((tabItem) => tabItem.isSelected).length;
+  };
 
   useEffect(() => {
     saveRepoNameToStorage(repo);
@@ -102,30 +107,48 @@ const Popup = () => {
       <header className="text-xl text-center py-2">
         GitHub Review Submitter
       </header>
-      <main className="py-4 px-4 max-h-80 overflow-auto">
-        <RepoForm
+      <main className="p-4 max-h-80 overflow-y-auto">
+        {/* <RepoForm
           uniqueTabs={uniqueTabs}
           repo={repo}
           onValueUpdate={(val: string) => {
             setRepo(val);
           }}
-        />
+        /> */}
         <section className="flex items-center justify-center gap-4 flex-col">
           <TabActions sendActionToTabs={sendActionToTabs} tabs={tabs} />
         </section>
         <section className="mt-4">
-          <h2 className="text-lg">Tabs: {getSelectedTabsLength() === tabs.length ? tabs.length : `${getSelectedTabsLength()} / ${tabs.length}`}</h2>
-          <div className='flex items-center justify-end gap-2'>
-            <small onClick={selectAll} className='cursor-pointer text-purple-500 font-bold hover:text-purple-600'>Select All</small>
+          <h2 className="text-lg">
+            Tabs:{' '}
+            {getSelectedTabsLength() === tabs.length
+              ? tabs.length
+              : `${getSelectedTabsLength()} / ${tabs.length}`}
+          </h2>
+          <div className="flex items-center justify-end gap-2">
+            <small
+              onClick={selectAll}
+              className="cursor-pointer text-purple-500 font-bold hover:text-purple-600"
+            >
+              Select All
+            </small>
             <small>|</small>
-            <small onClick={selectNone} className='cursor-pointer text-purple-500 font-bold hover:text-purple-600'>Select None</small>
+            <small
+              onClick={selectNone}
+              className="cursor-pointer text-purple-500 font-bold hover:text-purple-600"
+            >
+              Select None
+            </small>
           </div>
-          <TabsList repo={repo} tabs={tabs} onTabSelectionChange={onTabSelectionChange} />
+          <div className="tabs-list-container flex">
+            <TabsList
+              repo={repo}
+              tabs={tabs}
+              onTabSelectionChange={onTabSelectionChange}
+            />
+          </div>
         </section>
       </main>
-      <footer className="w-full bg-slate-900 p-3">
-        <img src="/saltlogo.svg" className="w-1/3 mx-auto" alt="logo" />
-      </footer>
     </div>
   );
 };

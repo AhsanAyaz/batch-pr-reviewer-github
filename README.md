@@ -1,10 +1,10 @@
-<img src="src/assets/img/icon-128.png" width="64"/>
+<img src="src/assets/img/logo.png" width="500" style="margin-inline: auto"/>
 
-# Chrome Extension - GitHub Classroom Helper
+# Chrome Extension - GitHub Review Submitter
 
-[![npm](https://img.shields.io/npm/v/chrome-extension-github-classroom-helper)](https://www.npmjs.com/package/chrome-extension-github-classroom-helper)
-[![npm-download](https://img.shields.io/npm/dw/chrome-extension-github-classroom-helper)](https://www.npmjs.com/package/chrome-extension-github-classroom-helper)
-[![npm](https://img.shields.io/npm/dm/chrome-extension-github-classroom-helper)](https://www.npmjs.com/package/chrome-extension-github-classroom-helper)
+[![npm](https://img.shields.io/npm/v/chrome-extension-github-review-submitter)](https://www.npmjs.com/package/chrome-extension-github-review-submitter)
+[![npm-download](https://img.shields.io/npm/dw/chrome-extension-github-review-submitter)](https://www.npmjs.com/package/chrome-extension-github-review-submitter)
+[![npm](https://img.shields.io/npm/dm/chrome-extension-github-review-submitter)](https://www.npmjs.com/package/chrome-extension-github-review-submitter)
 
 ## Features
 
@@ -87,10 +87,6 @@ and on your `src/manifest.json`:
   ]
 }
 ```
-
-## Intelligent Code Completion
-
-Thanks to [@hudidit](https://github.com/appliedtechnology/chrome-extension-github-classroom-helper/issues/4)'s kind suggestions, this extension supports chrome-specific intelligent code completion using [@types/chrome](https://www.npmjs.com/package/@types/chrome).
 
 ## Packing
 

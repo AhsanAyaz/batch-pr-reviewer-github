@@ -6,7 +6,11 @@ type RepoFormProps = {
   uniqueTabs: string[];
 };
 
-export const RepoForm: FC<RepoFormProps> = ({ onValueUpdate, repo, uniqueTabs }) => {
+export const RepoForm: FC<RepoFormProps> = ({
+  onValueUpdate,
+  repo,
+  uniqueTabs,
+}) => {
   const repoSelectRef = useRef<HTMLSelectElement>(null);
 
   useEffect(() => {

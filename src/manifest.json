@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "GitHub Classroom Helper",
-  "description": "A chrome extension that contains a bunch of cool features to work with GitHub classroom to submit feedback etc.",
+  "name": "GitHub Review Submitter",
+  "description": "A chrome extension that contains a bunch of cool features to submit feedback to a lot of PRs in one go",
   "options_page": "options.html",
   "action": {
     "default_popup": "popup.html",
@@ -18,24 +18,14 @@
         "https://github.com/*/pull/*/files",
         "https://classroom.github.com/classrooms/*"
       ],
-      "js": [
-        "contentScript.bundle.js"
-      ],
-      "css": [
-        "content.styles.css"
-      ]
+      "js": ["contentScript.bundle.js"],
+      "css": ["content.styles.css"]
     }
   ],
-  "permissions": [
-    "tabs"
-  ],
+  "permissions": ["tabs"],
   "web_accessible_resources": [
     {
-      "resources": [
-        "content.styles.css",
-        "icon-128.png",
-        "icon-34.png"
-      ],
+      "resources": ["content.styles.css", "icon-128.png", "icon-34.png"],
       "matches": []
     }
   ]
