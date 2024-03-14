@@ -1,4 +1,4 @@
-<img src="src/assets/img/logo.png" width="500" style="margin-inline: auto"/>
+<img src="src/assets/img/logo.jpg" width="500" style="margin-inline: auto"/>
 
 # Chrome Extension - GitHub Review Submitter
 
