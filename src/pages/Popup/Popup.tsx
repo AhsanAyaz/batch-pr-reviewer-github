@@ -104,9 +104,7 @@ const Popup = () => {
 
   return (
     <div className="App">
-      <header className="text-xl text-center py-2">
-        GitHub Review Submitter
-      </header>
+      <header className="text-xl text-center py-2">BatchPR Reviewer</header>
       <main className="p-4 max-h-80 overflow-y-auto">
         {/* <RepoForm
           uniqueTabs={uniqueTabs}

@@ -1,11 +1,11 @@
 {
-  "name": "chrome-extension-github-review-submitter",
+  "name": "batch-pr-reviewer-github",
   "version": "0.0.1",
   "description": "A chrome extension that contains a bunch of cool features to work with GitHub classroom to submit feedback etc.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ahsanayaz/chrome-extension-github-review-submitter.git"
+    "url": "https://github.com/ahsanayaz/batch-pr-reviewer-github.git"
   },
   "scripts": {
     "build": "node utils/build.js",

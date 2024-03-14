@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "GitHub Review Submitter",
+  "name": "BatchPR Reviewer for GitHub",
   "description": "A chrome extension that contains a bunch of cool features to submit feedback to a lot of PRs in one go",
   "options_page": "options.html",
   "action": {

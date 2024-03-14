@@ -1,10 +1,10 @@
 <img src="src/assets/img/logo.png" width="500" style="margin-inline: auto"/>
 
-# Chrome Extension - GitHub Review Submitter
+# Chrome Extension - BatchPR Reviewer for GitHub
 
-[![npm](https://img.shields.io/npm/v/chrome-extension-github-review-submitter)](https://www.npmjs.com/package/chrome-extension-github-review-submitter)
-[![npm-download](https://img.shields.io/npm/dw/chrome-extension-github-review-submitter)](https://www.npmjs.com/package/chrome-extension-github-review-submitter)
-[![npm](https://img.shields.io/npm/dm/chrome-extension-github-review-submitter)](https://www.npmjs.com/package/chrome-extension-github-review-submitter)
+[![npm](https://img.shields.io/npm/v/batch-pr-reviewer-github)](https://www.npmjs.com/package/batch-pr-reviewer-github)
+[![npm-download](https://img.shields.io/npm/dw/batch-pr-reviewer-github)](https://www.npmjs.com/package/batch-pr-reviewer-github)
+[![npm](https://img.shields.io/npm/dm/batch-pr-reviewer-github)](https://www.npmjs.com/package/batch-pr-reviewer-github)
 
 ## Features
 
