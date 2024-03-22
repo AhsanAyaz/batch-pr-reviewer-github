@@ -6,6 +6,21 @@
 [![npm-download](https://img.shields.io/npm/dw/batch-pr-reviewer-github)](https://www.npmjs.com/package/batch-pr-reviewer-github)
 [![npm](https://img.shields.io/npm/dm/batch-pr-reviewer-github)](https://www.npmjs.com/package/batch-pr-reviewer-github)
 
+## What??
+This Chrome extension allows educators and code reviewers to easily provide feedback to multiple GitHub pull requests at once. Approve and submit pull requests with a single click.
+<br/>
+<br/>
+[![Watch the video](https://www.codewithahsan.dev/_next/image?url=%2Fstatic%2Fimages%2Fgithub-batch-pr-review.jpg&w=2048&q=75)](https://www.youtube.com/watch?v=9OSFqi7AVTY)
+
+Article:
+[https://www.codewithahsan.dev/blog/github-batch-pr-reviewer-chrome-extension](https://www.codewithahsan.dev/blog/github-batch-pr-reviewer-chrome-extension)
+
+Chrome Extension:
+[https://chromewebstore.google.com/detail/batchpr-reviewer-for-gith/fgbjkjeckcakecmpalnkehjnihahoggi](https://chromewebstore.google.com/detail/batchpr-reviewer-for-gith/fgbjkjeckcakecmpalnkehjnihahoggi)
+
+Newsletter post:
+[https://codewithahsan.beehiiv.com/p/github-batch-pr-reviewer-chrome-extension](https://codewithahsan.beehiiv.com/p/github-batch-pr-reviewer-chrome-extension)
+
 ## Features
 
 - Recognizes all the pages which have the [Feedback Pull Request](https://docs.github.com/en/education/manage-coursework-with-github-classroom/teach-with-github-classroom/leave-feedback-with-pull-requests) opened
